@@ -50,6 +50,8 @@ Run the focuser application _ASCOM PinefeatCEF App_, click Connect.
 
 **Important!** Upon connection, click _Calibrate_ at least once to determine total number of focus steps.
 
+![Application](app.png)
+
 The calibration procedure **must be run at least once** for each lens. No need to worry about the starting lens position. The driver will automatically traverse the full focus range, from minimum to infinity, and store the total number of focus steps. The determined value will be displayed in the _Maximum position_ property.
 
 The application displays lens aperture range in f-stops and can sets the lens's aperture to an f-stop value. 
