@@ -36,7 +36,7 @@ Note: Self-Test Mode does not affect any camera or lens settings and can be safe
 
 ## ⚙️ Installing the driver
 
-1. Download the installer from the release **Assets** section.
+1. Download the installer from the [release](https://github.com/pinefeat/cef135/releases) **Assets** section.
 
 2. Run the `.exe` file and complete the installation.
 
@@ -54,6 +54,8 @@ Run the focuser application _ASCOM PinefeatCEF App_, click Connect.
 
 The calibration procedure **must be run at least once** for each lens. No need to worry about the starting lens position. The driver will automatically traverse the full focus range, from minimum to infinity, and store the total number of focus steps. The determined value will be displayed in the _Maximum position_ property.
 
+## Aperture control
+
 The application displays lens aperture range in f-stops and can sets the lens's aperture to an f-stop value. 
 
 Canon lenses do not report the current aperture, so aperture controls are write-only. If the lens aperture range is from f/5.6 to f/22.6, you can set the minimum aperture by passing `22.6` value, this will close the shutter as much as possible. To fully open the shutter, pass the value `5.6`. Any value in between will partially open the shutter.
@@ -61,6 +63,8 @@ Canon lenses do not report the current aperture, so aperture controls are write-
 In zoom lenses, the aperture range varies as the focal length changes. The controller will check the possible maximum and minimum aperture values before sending the value to the lens. If the values are out of range, the lens will not engage.
 
 ## 🔭 Using the Focuser
+
+The lens must be set to AF (Autofocus) mode for autofocus or focus control via the serial interface to work. If the lens is in Manual Focus (MF) mode, the controller will return an error.
 
 Ensure that you have **completed** the one-time **calibration** for the lens.
 
