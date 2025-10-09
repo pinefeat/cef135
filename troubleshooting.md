@@ -8,7 +8,7 @@ Driver installation or reinstallation fails with errors such as:
 
 > Unable to load one or more of the requested types.
 
-Chis usually happens when required dependencies are missing. The driver requires ASCOM Platform 7.0 – Update 2 and Microsoft .NET Framework 4.8.
+This usually happens when required dependencies are missing. The driver requires ASCOM Platform 7.0 – Update 2 and Microsoft .NET Framework 4.8.
 
  - Verify that ASCOM Platform 7.0 – Update 2 is installed.
  - Ensure .NET Framework 4.8 is installed.
@@ -27,6 +27,8 @@ The device identifies itself as _Lens Controller cef135_ when connected.
 ## 3. Lens Does Not Focus at All
 
 If the lens does not focus and the image remains static when using the focuser module, it is likely because the lens has not been calibrated and does not know its full focus range.
+
+If your lens is equipped with an AF range switch, changing the AF range will affect the focus motor travel. This can make previously recorded calibration data inaccurate. To ensure correct autofocus performance, always repeat the autofocus calibration procedure after changing the AF range switch.
 
 Open the application, click Connect, then click Calibrate.
 

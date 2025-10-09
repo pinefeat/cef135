@@ -66,7 +66,7 @@ In zoom lenses, the aperture range varies as the focal length changes. The contr
 
 The lens must be set to AF (Autofocus) mode for autofocus or focus control via the serial interface to work. If the lens is in Manual Focus (MF) mode, the controller will return an error.
 
-Ensure that you have **completed** the one-time **calibration** for the lens.
+Ensure that you have **completed** the one-time **calibration** for the lens. If your lens is equipped with an AF range switch, changing the AF range will affect the focus motor travel. This can make previously recorded calibration data inaccurate. To ensure correct autofocus performance, always repeat the autofocus calibration procedure after changing the AF range switch.
 
 Once the focuser is configured via the ASCOM Device Hub, it can be used directly in the astronomical imaging software.
 
