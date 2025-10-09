@@ -28,10 +28,8 @@ The device identifies itself as _Lens Controller cef135_ when connected.
 
 If the lens does not focus and the image remains static when using the focuser module, it is likely because the lens has not been calibrated and does not know its full focus range.
 
-If your lens is equipped with an AF range switch, changing the AF range will affect the focus motor travel. This can make previously recorded calibration data inaccurate. To ensure correct autofocus performance, always repeat the autofocus calibration procedure after changing the AF range switch.
-
 Open the application, click Connect, then click Calibrate.
 
 A valid, calibrated lens will record a positive value (e.g., 1203) in the _Maximum position_. If you see 0 or 65535 there, the lens has not been calibrated. 
 
-You only need to do this once per lens. 
+You only need to do this once per lens. However, if your lens is equipped with an AF range switch, changing the AF range will affect the focus motor travel. This can make previously recorded calibration data inaccurate. To ensure correct autofocus performance, always repeat the autofocus calibration procedure after changing the AF range switch.
