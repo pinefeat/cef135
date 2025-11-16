@@ -5,7 +5,7 @@
 [Setup]
 AppID={{ac2a52bb-2d5e-4be4-8eac-6d92e580a843}
 AppName=ASCOM PinefeatCEF Focuser Driver
-AppVerName=ASCOM PinefeatCEF Focuser Driver 1.0
+AppVerName=ASCOM PinefeatCEF Focuser Driver 1.0.1
 AppVersion=1.0
 AppPublisher=Pinefeat Support <support@pinefeat.co.uk>
 AppPublisherURL=mailto:support@pinefeat.co.uk
@@ -55,7 +55,7 @@ Filename: "{app}\ASCOM.PinefeatCEF.exe"; Parameters: "/unregister"
 
 [Code]
 const
-   REQUIRED_PLATFORM_VERSION = 6.2;    // Set this to the minimum required ASCOM Platform version for this application
+   REQUIRED_PLATFORM_VERSION = 7.0;    // Set this to the minimum required ASCOM Platform version for this application
 
 //
 // Function to return the ASCOM Platform's version number as a double.

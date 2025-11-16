@@ -50,6 +50,8 @@ namespace ASCOM.PinefeatCEF.Focuser
 
         private Guid uniqueId; // A unique ID for this instance of the driver
 
+        private int targetPosition = int.MinValue;
+
         #region Initialisation and Dispose
 
         /// <summary>
@@ -808,10 +810,12 @@ namespace ASCOM.PinefeatCEF.Focuser
                 CheckConnected("Move");
                 LogMessage("Move", $"Calling method.");
                 FocuserHardware.Move(position);
+                targetPosition = position;
                 LogMessage("Move", $"Completed.");
             }
             catch (Exception ex)
             {
+                targetPosition = int.MinValue;
                 LogMessage("Move", $"Threw an exception: \r\n{ex}");
                 throw;
             }
@@ -829,7 +833,14 @@ namespace ASCOM.PinefeatCEF.Focuser
                     CheckConnected("Position");
                     int position = FocuserHardware.Position;
                     LogMessage("Position", position.ToString());
-                    return position;
+                    if (Math.Abs((long)targetPosition - position) <= 1)
+                    {
+                        return targetPosition;
+                    }
+                    else
+                    {
+                        return position;
+                    }
                 }
                 catch (Exception ex)
                 {
