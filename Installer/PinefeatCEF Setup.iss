@@ -5,7 +5,7 @@
 [Setup]
 AppID={{ac2a52bb-2d5e-4be4-8eac-6d92e580a843}
 AppName=ASCOM PinefeatCEF Focuser Driver
-AppVerName=ASCOM PinefeatCEF Focuser Driver 1.0.1
+AppVerName=ASCOM PinefeatCEF Focuser Driver 1.0.2
 AppVersion=1.0
 AppPublisher=Pinefeat Support <support@pinefeat.co.uk>
 AppPublisherURL=mailto:support@pinefeat.co.uk

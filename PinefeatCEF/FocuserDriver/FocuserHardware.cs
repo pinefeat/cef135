@@ -533,7 +533,7 @@ namespace ASCOM.PinefeatCEF.Focuser
             if (string.IsNullOrWhiteSpace(parameter))
                 throw new ASCOM.InvalidValueException("ActionParameters must contain a valid float value.");
 
-            if (!float.TryParse(parameter, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float aperture))
+            if (!float.TryParse(parameter, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.CurrentCulture, out float aperture))
                 throw new ASCOM.InvalidValueException($"Invalid float value for aperture: '{parameter}'");
 
             // Format the command string: "a3.5"

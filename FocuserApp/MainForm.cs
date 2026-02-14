@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace ASCOM.PinefeatCEF.App
@@ -160,8 +161,8 @@ namespace ASCOM.PinefeatCEF.App
                 var parts = apertureRange.Split('-');
                 if (parts.Length == 2)
                 {
-                    labelApertureMaximum.Text = parts[0];
-                    labelApertureMinimum.Text = parts[1];
+                    labelApertureMaximum.Text = localizeFloat(parts[0]);
+                    labelApertureMinimum.Text = localizeFloat(parts[1]);
                 }
             }
             catch (Exception)
@@ -169,6 +170,16 @@ namespace ASCOM.PinefeatCEF.App
                 labelApertureMaximum.Text = "n/a";
                 labelApertureMinimum.Text = "n/a";
             }
+        }
+
+        private static string localizeFloat(string input)
+        {
+            // Parse using dot-based invariant culture
+            if (!float.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out float value))
+                throw new FormatException($"Invalid float value: '{input}'");
+
+            // Format using current culture with up to 2 decimal digits
+            return value.ToString("0.##", CultureInfo.CurrentCulture);
         }
 
         private void buttonCalibrate_Click(object sender, EventArgs e)

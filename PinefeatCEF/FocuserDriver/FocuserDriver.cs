@@ -727,7 +727,6 @@ namespace ASCOM.PinefeatCEF.Focuser
             {
                 try
                 {
-                    CheckConnected("Link Get");
                     bool link = Connected;
                     LogMessage("Link Get", link.ToString());
                     return link;
@@ -742,7 +741,6 @@ namespace ASCOM.PinefeatCEF.Focuser
             {
                 try
                 {
-                    CheckConnected("Link Set");
                     LogMessage("Link Set", value.ToString());
                     Connected = value;
                 }
